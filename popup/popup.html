@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GroupPost</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>GroupPost</h1>
+        <p class="sub">Ban-safe multi-post · you still click Post</p>
+      </div>
+      <span id="planBadge" class="badge">Free · 3 groups</span>
+    </header>
+
+    <section>
+      <div class="row-between">
+        <h2>Templates</h2>
+        <button type="button" id="addTemplate" class="ghost">+ Add</button>
+      </div>
+      <div id="templateList" class="list"></div>
+      <label class="field">
+        <span>Active template</span>
+        <select id="templateSelect"></select>
+      </label>
+    </section>
+
+    <section>
+      <div class="row-between">
+        <h2>Groups <span id="groupCount" class="muted"></span></h2>
+        <button type="button" id="addGroup" class="ghost">+ Add</button>
+      </div>
+      <div id="groupList" class="list"></div>
+      <p id="limitHint" class="hint" hidden>
+        Free plan allows 3 groups. Unlock Pro ($9/mo) for unlimited.
+      </p>
+    </section>
+
+    <section class="actions">
+      <button type="button" id="runPost" class="primary">
+        Open selected groups
+      </button>
+      <p class="hint">
+        Opens each group with your text ready. Review and click
+        <strong>Post</strong> yourself — we never auto-submit.
+      </p>
+    </section>
+
+    <footer>
+      <label class="toggle">
+        <input type="checkbox" id="proToggle" />
+        <span>Pro unlocked (dev stub)</span>
+      </label>
+      <a href="#" id="openOptions">Pricing notes</a>
+    </footer>
+
+    <dialog id="editDialog">
+      <form method="dialog" id="editForm">
+        <h3 id="dialogTitle">Edit</h3>
+        <label class="field">
+          <span id="nameLabel">Name</span>
+          <input id="editName" required />
+        </label>
+        <label class="field" id="bodyField">
+          <span>Body</span>
+          <textarea id="editBody" rows="5"></textarea>
+        </label>
+        <label class="field" id="urlField" hidden>
+          <span>Facebook group URL</span>
+          <input id="editUrl" type="url" placeholder="https://www.facebook.com/groups/..." />
+        </label>
+        <div class="dialog-actions">
+          <button type="button" id="cancelEdit" class="ghost">Cancel</button>
+          <button type="submit" class="primary">Save</button>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
