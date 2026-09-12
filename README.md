@@ -73,3 +73,6 @@ Workflow: `.github/workflows/grok-pr-review.yml` using `0xr3ngar/grok-build-revi
 3. Open a PR (non-draft) — Grok reviews the diff via your SuperGrok / Grok Build subscription
 
 No `XAI_API_KEY` required for this action.
+
+<!-- Demo PR: trigger Grok PR Review workflow -->
+
